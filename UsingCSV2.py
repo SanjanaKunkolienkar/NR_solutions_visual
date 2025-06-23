@@ -40,6 +40,8 @@ custom_cmap = LinearSegmentedColormap.from_list('yellow_red_black', cmap_colors)
 # Plot
 # --------------------------
 fig, ax = plt.subplots(figsize=(14, 7))
+# set font size
+plt.rcParams['font.size'] = 20  # Set the desired font size (e.g., 12)
 
 c = ax.pcolormesh(A, V, Z,
                   cmap=custom_cmap,
@@ -49,9 +51,11 @@ c = ax.pcolormesh(A, V, Z,
 
 cb = fig.colorbar(c, ax=ax, label='Iterations')
 
-ax.set_xlabel('V angle [deg]')
-ax.set_ylabel('V mag [pu]')
-ax.set_title('NR ROC')
+ax.set_xlabel('V angle [deg]', fontsize=20)
+ax.set_ylabel('V mag [pu]', fontsize=20)
+ax.set_title('NR ROC', fontsize=20)
+ax.tick_params(axis='x', labelsize=20)
+ax.tick_params(axis='y', labelsize=20)
 
 plt.tight_layout()
 plt.show()
