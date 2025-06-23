@@ -1,0 +1,217 @@
+CustomFieldDescription (ObjectType,CustomType,CustomMaxOfType,CustomFieldCaption,CustomHeaderCaption,
+   CustomIncludeInDiff)
+{
+"Default" "Floating Point" 2 "Custom\Floating Point X" "Cust Float X" "YES"
+"Default" "String" 2 "Custom\String X" "Cust String X" "YES"
+"Default" "Integer" 2 "Custom\Integer X" "Cust Int X" "YES"
+}
+PWCaseInformation (Selected)
+{
+"NO "
+   <SUBDATA PWCaseHeader>
+     //Case Description
+   </SUBDATA>
+}
+Owner (Number,Name,DataMaintainerAssign)
+{
+       1 "1" ""
+}
+Limit_Monitoring_Options_Value (Option,Value)
+{
+"LMS_IgnoreRadial"                 "NO"
+}
+LimitSet (Name,Disabled,DataMaintainerAssign,AmpMVA,MonitorEnd,BranchPercent,
+   InterfacePercent,BranchRateSet,InterfaceRateSet,BranchRateSetCTG,
+   InterfaceRateSetCTG,HighVolt,LowVolt,HighVoltCTG,LowVoltCTG,HighVoltRateSet,
+   LowVoltRateSet,HighVoltRateSetCTG,LowVoltRateSetCTG)
+{
+"Default" "NO " "" "Amp/MVA" "Higher" 100.0000 100.0000 "A" "A" "A" "A" 1.100000 0.900000 1.100000 0.900000 "A" "A" "A" "A"
+}
+RatingSetNameBus (Name,Header,Description)
+{
+"A" "" ""
+"B" "" ""
+"C" "" ""
+"D" "" ""
+}
+RatingSetNameBranch (Name,Header,Description)
+{
+"A" "" ""
+"B" "" ""
+"C" "" ""
+"D" "" ""
+"E" "" ""
+"F" "" ""
+"G" "" ""
+"H" "" ""
+"I" "" ""
+"J" "" ""
+"K" "" ""
+"L" "" ""
+"M" "" ""
+"N" "" ""
+"O" "" ""
+}
+RatingSetNameInterface (Name,Header,Description)
+{
+"A" "" ""
+"B" "" ""
+"C" "" ""
+"D" "" ""
+"E" "" ""
+"F" "" ""
+"G" "" ""
+"H" "" ""
+"I" "" ""
+"J" "" ""
+"K" "" ""
+"L" "" ""
+"M" "" ""
+"N" "" ""
+"O" "" ""
+}
+RatingSetNameBusPair (Name,Header,Description)
+{
+"A" "" ""
+"B" "" ""
+"C" "" ""
+"D" "" ""
+}
+Bus (Number,FixedNumBus,SubNodeNum,Name,NomkV,Slack,NomB,NomG,Vpu,Vangle,
+   DCLossMultiplier,AreaNumber,ZoneNumber,BANumber,OwnerNumber,SubNumber,Monitor,
+   LimitSet,UseSpecificLimits,LimitLowA,LimitLowB,LimitLowC,LimitLowD,LimitHighA,
+   LimitHighB,LimitHighC,LimitHighD,Latitude,Longitude,TopologyBusType,Priority,
+   EMSType,EMSID,DataMaintainerAssign,DataMaintainerInherit,
+   DataMaintainerInheritBlock,AllLabels)
+{
+     1      1 "" "1"            138.0000 "YES"    0.00000    0.00000 1.00000000   0.0000010 1.000000      1      1      1      1 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " ""
+     2      2 "" "2"            138.0000 "NO "    0.00000    0.00000 0.85537247 -13.5218483 1.000000      1      1      1      1 "" "YES" "Default" "NO " "" "" "" "" "" "" "" "" "" "" "BusbarSection" 0 "" "" "" "YES" "NO " ""
+}
+Gen (BusNum,ID,Status,VoltSet,VoltSetTol,RegBusNum,RegFactor,AGC,PartFact,MWSetPoint,
+   MWMax,MWMin,EnforceMWLimit,AVR,MvarSetPoint,MvarMax,MvarMin,UseCapCurve,
+   WindContMode,WindContModePF,UseLineDrop,Rcomp,Xcomp,VoltageDroopControl,
+   MVABase,GenR,GenX,StepR,StepX,StepTap,GovRespLimit,UnitTypeCode,FuelTypeCode,
+   AreaNumber,ZoneNumber,BANumber,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels)
+{
+     1 "1" "Closed" 1.00000 0.00000      1 100.00000 "YES"   10.00000  200.00007 1000.00000    0.00000 "YES" "YES"  168.33755 9900.00000 -9900.00000 "NO " "None" 1.000000 "NO"      0.000000 0.000100 "" 100.0000 0.000000 1.000000 0.000000 0.000000 1.000000 "Normal"    "UN" "UN"      1      1      1     1 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" ""
+}
+Load (BusNum,ID,Status,AGC,SMW,SMvar,IMW,IMvar,ZMW,ZMvar,DistStatus,DistMWInput,
+   DistMvarInput,Interruptible,MWMax,MWMin,DistMWMax,DistMWMin,DistUnitTypeCode,
+   LoadModelGroup,AreaNumber,ZoneNumber,BANumber,OwnerNumber,EMSType,EMSID,
+   DataMaintainerAssign,DataMaintainerInherit,AllLabels)
+{
+     2 "1 " "Closed" "YES"  200.00000  100.00000    0.00000    0.00000    0.00000    0.00000 "Closed"    0.00000    0.00000 "NO "    0.00000    0.00000    0.00000    0.00000 "UN" ""      1      1      1      1 "" "" "" "YES" ""
+}
+Branch (BusNumFrom,BusNumTo,Circuit,BranchDeviceType,ConsolidateAllow,
+   OpenOrCloseBreakersAllow,Status,StatusNormal,ByPass,MeteredBus,R,X,B,G,
+   LineLength,Monitor,LimitSet,LimitMVAA,LimitMVAB,LimitMVAC,LimitMVAD,LimitMVAE,
+   LimitMVAF,LimitMVAG,LimitMVAH,LimitMVAI,LimitMVAJ,LimitMVAK,LimitMVAL,
+   LimitMVAM,LimitMVAN,LimitMVAO,OwnerNum1,OwnerPerc1,OwnerNum2,OwnerPerc2,
+   OwnerNum3,OwnerPerc3,OwnerNum4,OwnerPerc4,OwnerNum5,OwnerPerc5,OwnerNum6,
+   OwnerPerc6,OwnerNum7,OwnerPerc7,OwnerNum8,OwnerPerc8,EMSType,EMSID,EMSLineID,
+   EMSCBTyp,EMSID2From,EMSID2To,DataMaintainerAssign,DataMaintainerInherit,
+   AllLabels)
+{
+     1      2 " 1" "Line"        "" "" "Closed" "Closed" "NO"  "1"       0.000000  0.100000  0.000000  0.000000    0.00000 "YES" "Default" 1000.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0    0.0     1 100.000 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "YES" ""
+}
+Area (Number,Name,SuperArea,MonitorLimits,MonitorMinkV,MonitorMaxkV,AutoControlShunt,
+   AutoControlXF,AGC,ExportMWUnspecified,SlackBus,AGCTolerance,
+   EnforceGenMWLimits,SlackInjectionGroup,SlackIGUseConstantPowerFactor,
+   SlackIGPowerFactor,SlackIGPowerFactorQMult,SlackIGEnforcePosLoad,
+   SlackIGEnforceMWLimits,SlackIGEnforceAGC,DataMaintainerAssign)
+{
+       1 "1"                                "" "YES"   0.0000 9999.0000 "YES" "YES" "ED"                0.000 ""              1.00 "YES" "" "YES" 1.000000 1.000000 "NO " "NO " "NO " ""
+}
+BalancingAuthority (Number,Name,AGC,ExportMWUnspecified,SlackBus,AGCTolerance,DataMaintainerAssign)
+{
+1 "1" "Off AGC"        0.000 ""  1.00 ""
+}
+Zone (Number,Name,MonitorLimits,MonitorMinkV,MonitorMaxkV,DataMaintainerAssign)
+{
+       1 "1"                                "YES"   0.0000 9999.0000 ""
+}
+Sim_Solution_Options_Value (Option,Value)
+{
+"AGCToleranceMVA"                  "5"
+"ChkDCTaps"                        "YES"
+"ChkDFACTS"                        "NO"
+"ChkMWAGC"                         "YES"
+"ChkPhaseShifters"                 "YES"
+"ChkShunts"                        "YES"
+"ChkSVCs"                          "YES"
+"ChkTaps"                          "YES"
+"ChkVarBackoffImmediately"         "YES"
+"ChkVarImmediately"                "NO"
+"CloseCBToEnergizeShunts"          "NO"
+"ConsolidationUse"                 "NO"
+"CTGInterfaceEnforcement"          "PowerFlow"
+"DCApprox"                         "NO"
+"DCLossComp"                       "NO"
+"DCModelType"                      "RIgnore"
+"DCPhaseIgnore"                    "YES"
+"DCXFCorrIgnore"                   "YES"
+"DisableAngleRotation"             "NO"
+"DisableAngleSmoothing"            "NO"
+"DisableGenMVRCheck"               "NO"
+"DisableOptMult"                   "NO"
+"DisableRestoreSolution"           "NO"
+"DisableRestoreState"              "NO"
+"DisableXFTapWrongSign"            "YES"
+"DoOneIteration"                   "NO"
+"DynAssignSlack"                   "YES"
+"EconDispEnforceConvex"            "NO"
+"EconDispPenaltyFactors"           "YES"
+"EnforceGenMWLimits"               "YES"
+"EvalSolutionIsland"               "NO"
+"EvalSolutionIslandRequireLargest" "NO"
+"FlatStartInit"                    "YES"
+"LogID"                            "Numbers"
+"LogLTCColor"                      "32768"
+"LogLTCSuppress"                   "NO"
+"LogMvarColor"                     "8388736"
+"LogMvarSuppress"                  "NO"
+"LogMWColor"                       "16711680"
+"LogMWSuppress"                    "NO"
+"LogNomkV"                         "NO"
+"LogOPFLPColor"                    "16711680"
+"LogOPFLPSuppress"                 "YES"
+"LogPhaseColor"                    "8388863"
+"LogPhaseSuppress"                 "NO"
+"LogShowContainerObjectCreate"     "NO"
+"LogShuntColor"                    "33023"
+"LogShuntSuppress"                 "NO"
+"LossSenseFunc"                    "Area"
+"LTCTapBalance"                    "YES"
+"MaxItr"                           "50"
+"MaxItrVoltLoop"                   "20"
+"MinLTCSense"                      "0.05"
+"MinVoltILoad"                     "0.5"
+"MinVoltSLoad"                     "0.7"
+"ModelPSDiscrete"                  "NO"
+"MVABase"                          "100"
+"MVAConvergenceTol"                "0.1"
+"MvarSharingAllocation"            "RegPerc"
+"MWAGCAreaIsland"                  "Use Area/SuperArea ACE"
+"MWAGCIGEnforceGenMWLimits"        "NO"
+"MWAGCIGName"                      ""
+"MWAGCIGOnlyAGCAble"               "NO"
+"MWAGCIGPositiveLoad"              "NO"
+"MWAGCIGPowerFact"                 "1"
+"MWAGCIGQMult"                     "1"
+"MWAGCIGUseContantPF"              "NO"
+"PreventOscillations"              "NO"
+"ShuntInner"                       "YES"
+"TransformerStepping"              "Coordinated"
+"UseLossFactorForDCTieLines"       "NO"
+"UsePSLFConvApproxPowerFactor"     "NO"
+"UsePSLFConvIncorrectFixedTap"     "NO"
+"VarLimitBackoffVtol"              "0.00005"
+"ZBRThreshold"                     "0.0002"
+}
+PostPowerFlowActions (Skip)
+{
+"NO "
+}
