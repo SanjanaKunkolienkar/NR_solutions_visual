@@ -5,7 +5,7 @@ from matplotlib.colors import LinearSegmentedColormap
 import os
 
 cwd = os.getcwd()
-path = os.path.join(cwd, 'Inputs\\New_PW_solutions_without_om.csv')
+path = os.path.join(cwd, 'Inputs\\New_PW_solutions_2bus.csv')
 
 # --------------------------
 # Load CSV
@@ -51,7 +51,7 @@ cb = fig.colorbar(c, ax=ax, label='Iterations')
 
 ax.set_xlabel('V angle [deg]')
 ax.set_ylabel('V mag [pu]')
-ax.set_title('NR ROC without optimal multi.')
+ax.set_title('NR ROC')
 
 plt.tight_layout()
 plt.show()

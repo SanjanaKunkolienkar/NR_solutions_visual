@@ -1,5 +1,6 @@
 import numpy as np
 import numpy.ma as ma
+import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap, Normalize
 from matplotlib import ticker
@@ -62,8 +63,8 @@ print(f"Low voltage solution: |V|={Vm_low:.4f}")
 #TODO: later print all stable solutions automatically
 
 # make a grid for the NR region of convergence
-Vm_range = np.linspace(0.0, 1.2, 500)
-Va_range = np.deg2rad(np.linspace(-180, 180, 500))
+Vm_range = np.linspace(0.0, 1.2, 200)
+Va_range = np.deg2rad(np.linspace(-180, 180, 200))
 Vm_grid, Va_grid = np.meshgrid(Vm_range, Va_range)
 
 #run pf
@@ -164,53 +165,53 @@ Iter_low[Solution == 0]  = Iterations[Solution == 0]
 Iter_high = Iter_high.T
 Iter_low = Iter_low.T
 
-
-fig = go.Figure()
-# Choose tick marks in raw iteration units:
-ticks_raw = np.arange(0, max_iter + 1, 5)
-ticks_normalized = ticks_raw / max_iter
-fig = go.Figure()
-
-fig.add_trace(go.Heatmap(
-    z=Z_high,
-    customdata=Iter_high,
-    y=Vm_range,
-    x=np.rad2deg(Va_range),
-    colorscale="Reds",
-    zmin=0, zmax=1,
-    colorbar=dict(
-        title="Iterations (High)",
-        len=0.5,
-        y=0.75,
-        tickmode='array',
-        tickvals=ticks_normalized,
-        ticktext=[f"{t}" for t in ticks_raw]
-    ),
-    hovertemplate="Vm: %{y:.2f}<br>Va: %{x:.2f}°<br>",
-))
-
-fig.add_trace(go.Heatmap(
-    z=Z_low,
-    customdata=Iter_low,   # raw count for low basin too
-    y=Vm_range,
-    x=np.rad2deg(Va_range),
-    colorscale="YlOrBr",
-    zmin=0, zmax=1,
-    colorbar=dict(
-        title="Iterations (Low)",
-        len=0.5,
-        y=0.25,
-        tickmode='array',
-        tickvals=ticks_normalized,
-        ticktext=[f"{t}" for t in ticks_raw]
-    ),
-    hovertemplate="Vm: %{y:.2f}<br>Va: %{x:.2f}°<br>",
-))
-fig.update_layout(
-    title="NR Region of Convergence",
-    yaxis=dict(title="Voltage Magnitude (p.u.)", showgrid=False),
-    xaxis=dict(title="Voltage Angle (degrees)", showgrid=False),
-    plot_bgcolor='black'
-)
-fig.show()
-fig.write_html("NR_ROC_5bus_interactive.html")
+#
+# fig = go.Figure()
+# # Choose tick marks in raw iteration units:
+# ticks_raw = np.arange(0, max_iter + 1, 5)
+# ticks_normalized = ticks_raw / max_iter
+# fig = go.Figure()
+#
+# fig.add_trace(go.Heatmap(
+#     z=Z_high,
+#     customdata=Iter_high,
+#     y=Vm_range,
+#     x=np.rad2deg(Va_range),
+#     colorscale="Reds",
+#     zmin=0, zmax=1,
+#     colorbar=dict(
+#         title="Iterations (High)",
+#         len=0.5,
+#         y=0.75,
+#         tickmode='array',
+#         tickvals=ticks_normalized,
+#         ticktext=[f"{t}" for t in ticks_raw]
+#     ),
+#     hovertemplate="Vm: %{y:.2f}<br>Va: %{x:.2f}°<br>",
+# ))
+#
+# fig.add_trace(go.Heatmap(
+#     z=Z_low,
+#     customdata=Iter_low,   # raw count for low basin too
+#     y=Vm_range,
+#     x=np.rad2deg(Va_range),
+#     colorscale="YlOrBr",
+#     zmin=0, zmax=1,
+#     colorbar=dict(
+#         title="Iterations (Low)",
+#         len=0.5,
+#         y=0.25,
+#         tickmode='array',
+#         tickvals=ticks_normalized,
+#         ticktext=[f"{t}" for t in ticks_raw]
+#     ),
+#     hovertemplate="Vm: %{y:.2f}<br>Va: %{x:.2f}°<br>",
+# ))
+# fig.update_layout(
+#     title="NR Region of Convergence",
+#     yaxis=dict(title="Voltage Magnitude (p.u.)", showgrid=False),
+#     xaxis=dict(title="Voltage Angle (degrees)", showgrid=False),
+#     plot_bgcolor='black'
+# )
+# fig.show()
+# fig.write_html("NR_ROC_5bus_interactive.html")
