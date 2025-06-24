@@ -59,3 +59,33 @@ ax.tick_params(axis='y', labelsize=20)
 
 plt.tight_layout()
 plt.show()
+
+
+###########################
+# ANGLE SWEEP #
+###########################
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+row_index = np.argmin(np.abs(voltages - 1.0))
+selected_voltage = voltages[row_index]
+iterations = Z[row_index, :]
+volt_angles = angles
+
+# Create figure and axis
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Plot: X = voltage angles, Y = iterations
+ax.plot(volt_angles, iterations, label=f"{selected_voltage:.3f}")
+
+# Labels, title, legend
+ax.set_xlabel('Volt Angle Deg.', fontsize=20)
+ax.set_ylabel('Iteration', fontsize=20)
+ax.set_title(f"{selected_voltage:.3f}", fontsize=20)
+ax.legend(fontsize=15)
+
+ax.tick_params(axis='both', labelsize=20)
+
+plt.tight_layout()
+plt.show()
