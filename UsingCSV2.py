@@ -5,7 +5,7 @@ from matplotlib.colors import LinearSegmentedColormap
 import os
 
 cwd = os.getcwd()
-path = os.path.join(cwd, 'Inputs\\New_PW_solutions_2bus_Polar.csv')
+path = os.path.join(cwd, 'Inputs\\New_PW_solutions_2000bus_6254.csv')
 
 # --------------------------
 # Load CSV
@@ -68,7 +68,7 @@ ax.tick_params(axis='x', labelsize=20)
 ax.tick_params(axis='y', labelsize=20)
 
 plt.tight_layout()
-plt.savefig('NR_ROC_2bus.png', dpi=600, bbox_inches='tight')
+plt.savefig('NR_ROC_2000bus.png', dpi=600, bbox_inches='tight')
 plt.show()
 
 
